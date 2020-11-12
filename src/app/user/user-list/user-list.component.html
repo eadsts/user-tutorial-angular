@@ -1,0 +1,37 @@
+<!-- we can only put things that belong inside of body tags in here-->
+<!-- don't put the actual body tage, head, link, script, meta -->
+<!-- or bootstrap styling here -->
+
+
+<h1>User List</h1>
+
+<!-- <div>
+  <!-- use ngClass to style buttons -->
+  <!-- two vertical bars are a piece of text to separate the buttons -->
+  <!-- so they don't but up against each other -->
+  <!-- or could use &ngsp; for one space or &ngsp; &ngsp; for two spaces-->
+  <!-- <button [ngClass]="btnStyle" (click)="getStudents()">Get the students-click me</button>
+  || <button (click)="changeColor()">Change color of button - click me</button>
+</div> --> -->
+
+<table [ngClass]="tableStyle">
+  <tr>
+    <!-- column headings -->
+    <th>Id</th>
+    <th>User Name</th>
+    <th>Name</th>
+    <th>Reviewer?</th>
+    <th>Admin?</th>
+  </tr>
+  <!-- column data -->
+  <!-- for loop attached to html and refers to app.component.ts -->
+  <!-- if student favColor is blue, the entire student instance will be hidden -->
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.firstName }} {{ user.lastName }}</td>
+    <td>{{ user.isReviewer ? "Yes" : "No" }}</td>
+    <td>{{ user.isAdmin ? "Yes" : "No" }}</td>
+  </tr>
+</table>
+
